@@ -11,6 +11,19 @@
         <Image  Grid.ColumnSpan="2"
                 Source="dotnet_bot.png"
                 BackgroundColor="Transparent"/>
+        
+        <Picker x:Name="picker"
+                Title="Select a monkey"
+                Grid.Row="1"
+                >
+                
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baboon</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        
 
     </Grid>
 
