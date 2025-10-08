@@ -1,26 +1,38 @@
-﻿namespace FirstApp;
+﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Microsoft.Maui.Controls.Internals;
+
+namespace FirstApp;
 
 public partial class MainPage : ContentPage
 {
-	List<string> itemList = new List<string>();
+	private int count = 0;
+
+
 	public MainPage()
 	{
+		Console.WriteLine("Initializing MainPage");
+
 		InitializeComponent();
 
 
-		itemList.Add("Baboon");
-		itemList.Add("Capuchin Monkey");
-		itemList.Add("Blue monkey");
-		itemList.Add("Squirrel monkey");
-		itemList.Add("Golden Lion Tamarin");
-		itemList.Add("Howler Monkey");
-		itemList.Add("Japanese Macaque");
-
-		Picker picker = new Picker { Title = "Select a monkey" };
-		picker.ItemsSource = itemList; 
 	}
 
-	
+	public void ChangeLabel()
+	{
+		count++;
+		IncShower.Text = count.ToString();
+	}
 
+	void OnButtonClicked(object sender, EventArgs e)
+	{
+		ChangeLabel();
+	}
+
+	async void OnPickerSelected(object sender, EventArgs e)
+	{
+		await DisplayAlert("Selected", ((Picker)sender).SelectedItem.ToString(), "OK");
+	}
 
 }
