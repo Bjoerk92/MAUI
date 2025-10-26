@@ -3,15 +3,29 @@ namespace FirstApp;
 
 public partial class MainPage : ContentPage
 {
+
+	private void SetupMonkeypicker()
+	{
+		picker.ItemsSource = new List<string> {
+			"Baboon",
+			"Capuchin Monkey",
+			"Blue Monkey",
+			"Squirrel Monkey",
+			"Golden Lion Tamarin",
+			"Howler Monkey",
+			"Japanese Macaque" 
+		};
+	}
+	
 	private int count = 0;
 	public MainPage()
 	{
 		Console.WriteLine("Initializing MainPage");
-
 		InitializeComponent();
+		SetupMonkeypicker();
 	}
 
-	public void ChangeLabel()
+	private void ChangeLabel()
 	{
 		IncShower.Text = count.ToString();
 	}

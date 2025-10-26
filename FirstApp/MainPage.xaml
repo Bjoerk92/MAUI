@@ -4,6 +4,7 @@
              x:Class="FirstApp.MainPage">
 
     <Grid 
+        Margin="20,35,20,20"
         RowDefinitions="100, 50, 50, 50, 50, 50, *"
         ColumnDefinitions="200, 100, 100, 100, auto"
         Padding="10">
@@ -17,17 +18,6 @@
             Grid.Row="1" Grid.RowSpan="1" Grid.Column="0"
             SelectedIndexChanged="OnPickerSelected"
             HeightRequest="35">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                <x:String>Baboon</x:String>
-                <x:String>Capuchin Monkey</x:String>
-                <x:String>Blue Monkey</x:String>
-                <x:String>Squirrel Monkey</x:String>
-                <x:String>Golden Lion Tamarin</x:String>
-                <x:String>Howler Monkey</x:String>
-                <x:String>Japanese Macaque</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
         </Picker>
         
         <Button Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" 
