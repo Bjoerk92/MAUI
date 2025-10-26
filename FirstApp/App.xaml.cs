@@ -15,7 +15,10 @@ public partial class App : Application
 		var newWindow = new Window(new AppShell())
 		{
 			Width = newWidth,
-			Height = newHeight
+			Height = newHeight,
+
+			MinimumHeight = newHeight,
+			MinimumWidth = newWidth
 		};
 
 
